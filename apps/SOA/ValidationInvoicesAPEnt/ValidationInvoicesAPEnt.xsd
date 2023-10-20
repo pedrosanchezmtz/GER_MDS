@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" targetNamespace="http://soa.estrellaroja.com.mx/ValidationInvoicesAPEnt" elementFormDefault="qualified" xmlns:cmn="http://soa.estrellaroja.com.mx/EstrellaRojaCommons">
+<xsd:import schemaLocation="oramds:/apps/Common/XSD/EstrellaRojaCommons.xsd" namespace="http://soa.estrellaroja.com.mx/EstrellaRojaCommons"/>
+<xsd:element name="ValidationInvoicesAPRq" type="tns:ValidationInvoicesAPRqType"/>
+<xsd:element name="ValidationInvoicesAPRs" type="tns:ValidationInvoicesAPRsType"/>
+<xsd:complexType name="ValidationInvoicesAPRqType">
+<xsd:sequence>
+<xsd:element name="ConfiguracionUsuario" nillable="true" type="xsd:string"/>
+<xsd:element name="Ambiente" nillable="true" type="xsd:string"/>
+<xsd:element name="CatalogoRetenciones">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Retencion" type="tns:RetencionType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CatalogoCondicionesPago">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CondicionPago" type="tns:CondicionPagoType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CatalogoFormasPago">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FormaPago" type="tns:FormaPagoType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CatalogoValidaciones">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Validacion" type="tns:ValidacionType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="CatalogoConfiguraciones">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Configuracion" type="tns:ConfigType" maxOccurs="unbounded" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RetencionType">
+<xsd:sequence>
+<xsd:element name="VersionCFDI" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoDocumento" nillable="true" type="xsd:string"/>
+<xsd:element name="MensajeNotificacion" nillable="true" type="xsd:string"/>
+<xsd:element name="Accion" nillable="true" type="xsd:string"/>
+<xsd:element name="RegimenFiscal" nillable="true" type="xsd:string"/>
+<xsd:element name="Cuenta" nillable="true" type="xsd:string"/>
+<xsd:element name="IVA" nillable="true" type="xsd:string"/>
+<xsd:element name="ISR" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoPersona" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="CondicionPagoType">
+<xsd:sequence>
+<xsd:element name="VersionCFDI" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoDocumento" nillable="true" type="xsd:string"/>
+<xsd:element name="MensajeNotificacion" nillable="true" type="xsd:string"/>
+<xsd:element name="Accion" nillable="true" type="xsd:string"/>
+<xsd:element name="CondicionPago" nillable="true" type="xsd:string"/>
+<xsd:element name="MetodoPago" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FormaPagoType">
+<xsd:sequence>
+<xsd:element name="VersionCFDI" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoDocumento" nillable="true" type="xsd:string"/>
+<xsd:element name="MensajeNotificacion" nillable="true" type="xsd:string"/>
+<xsd:element name="Accion" nillable="true" type="xsd:string"/>
+<xsd:element name="FormaPago" nillable="true" type="xsd:string"/>
+<xsd:element name="MetodoPago" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidacionType">
+<xsd:sequence>
+<xsd:element name="Codigo" nillable="true" type="xsd:string"/>
+<xsd:element name="Orden" nillable="true" type="xsd:string"/>
+<xsd:element name="VersionCFDI" nillable="true" type="xsd:string"/>
+<xsd:element name="TipoDocumento" nillable="true" type="xsd:string"/>
+<xsd:element name="MensajeNotificacion" nillable="true" type="xsd:string"/>
+<xsd:element name="Accion" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro1" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro2" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro3" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro4" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro5" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConfigType">
+<xsd:sequence>
+<xsd:element name="Codigo" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro1" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro2" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro3" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro4" nillable="true" type="xsd:string"/>
+<xsd:element name="Parametro5" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidationInvoicesAPRsType">
+<xsd:complexContent>
+<xsd:extension base="cmn:BaseRsType"/>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>
